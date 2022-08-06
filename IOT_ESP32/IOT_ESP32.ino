@@ -13,6 +13,7 @@
 #include "NTP.h"
 #include "OTA.h"
 #include "I2C_Scan.h"
+#include "API.h"
 
 
 void normalSetup() {
@@ -21,6 +22,7 @@ void normalSetup() {
     iniciar_OTA();
     TemInternet = PingServer(3);
     configTime(-10800, 0, ntpServer); //-10800 segundos de (UTC -3 horas)
+    API_Login();
   } else {
     ReinicaESP32("Sem Wifi");
   }
@@ -35,7 +37,7 @@ void normalLoop() {
 
   if (millis() - segundos_5 > 5450) {
     segundos_5 = millis();
-    debug(hour(), date(), IP(), IntensidadeSinalWifi(), true, 16, 1);
+    //debug(hour(), date(), IP(), IntensidadeSinalWifi(), true, 16, 1);
 
   }
 
