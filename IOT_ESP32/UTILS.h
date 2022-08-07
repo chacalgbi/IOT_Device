@@ -97,3 +97,26 @@ void tempe_proc(){
   temp_int = ((temprature_sens_read() - 32 ) / 1.8);
   debug("Tempe Proc: ", "", String(temp_int)+"C", "" ,true,16,1);
 }
+
+void StringDivider(){
+  // Aqui vamos considerar que a String inicial tem 4 pedaços que quero separar
+  String Teste = "Thome_Lucas_Araujo_Oliveira";
+  
+  int index1 = Teste.indexOf('_', 0);
+  String a1 = Teste.substring(0, index1);
+
+  int index2 = Teste.indexOf('_', index1+1);
+  String a2 = Teste.substring(index1+1, index2);
+
+  int index3 = Teste.indexOf('_', index2+1);
+  String a3 = Teste.substring(index2+1, index3);
+
+  int index4 = Teste.indexOf('_', index3+1);
+  String a4 = Teste.substring(index3+1, index4);
+
+  Serial.println("\n\n\n");
+  Serial.print(index1); Serial.print(" - "); Serial.println(a1);
+  Serial.print(index2); Serial.print(" - "); Serial.println(a2);
+  Serial.print(index3); Serial.print(" - "); Serial.println(a3);
+  Serial.print(index4); Serial.print(" - "); Serial.println(a4);
+}

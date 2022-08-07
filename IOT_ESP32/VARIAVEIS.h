@@ -1,17 +1,26 @@
 bool modo_config = false;
 bool TemRede = false;
 bool TemInternet = false;
-bool inverter = false;
+//bool inverter = false;
 
-byte rele_selecionado = 0;
-uint8_t indice_eeprom = 0;
-const int QTD_EEPROM = 20;
-uint8_t QTD_RELES = 5;
-uint8_t hora_lig[QTD_EEPROM];
-uint8_t minuto_lig[QTD_EEPROM];
-uint8_t hora_desl[QTD_EEPROM];
-uint8_t minuto_desl[QTD_EEPROM];
-String conexao = "";
+//byte rele_selecionado = 0;
+//uint8_t indice_eeprom = 0;
+//const int QTD_EEPROM = 20;
+//uint8_t QTD_RELES = 5;
+//uint8_t hora_lig[QTD_EEPROM];
+//uint8_t minuto_lig[QTD_EEPROM];
+//uint8_t hora_desl[QTD_EEPROM];
+//uint8_t minuto_desl[QTD_EEPROM];
+//String conexao = "";
+
+//Variáveis do timer de 3 relés
+String time_liga_rele1 = "";
+String time_liga_rele2 = "";
+String time_liga_rele3 = "";
+String time_desl_rele1 = "";
+String time_desl_rele2 = "";
+String time_desl_rele3 = "";
+
 
 char ssid[30];   // Rede WiFi
 char pw[30];     // Senha da Rede WiFi
@@ -22,12 +31,11 @@ String pw_str = "";
 String ssid_str = "";
 String server_str = "";
 
-String NomeRede = "Kau";
-
 int long segundos_1 = 0;
 int long segundos_5 = 0;
 int long segundos_10 = 0;
 int long segundos_60 = 0;
+int long segundos_180 = 0;
 
 int temp_int = 0;
 

@@ -71,12 +71,12 @@ bool ConectaWifi(char* rede, char* senha, int tentativas){
 }
 
 bool PingServer(int num_pings){
-  bool pingInfo = Ping.ping("www.google.com.br", num_pings);
+  bool pingInfo = Ping.ping("www.google.com", num_pings);
   float ping_ms = Ping.averageTime();
   if(pingInfo){
-    debug("","Ping OK","",String(ping_ms)+"ms",true,16,3);
+    debug("Ping OK","google.com","",String(ping_ms)+"ms",true,16,3);
   }else{
-    debug("","Ping Falhou","",":(",true,16,1);
+    debug("Ping Falhou","","google.com",":(",true,16,1);
   }
   return pingInfo;
 }
